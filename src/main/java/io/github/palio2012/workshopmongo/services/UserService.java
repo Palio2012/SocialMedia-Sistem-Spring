@@ -5,6 +5,7 @@ import io.github.palio2012.workshopmongo.dto.UserDTO;
 import io.github.palio2012.workshopmongo.repository.UserRepository;
 import io.github.palio2012.workshopmongo.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,6 +30,10 @@ public class UserService {
         return repo.insert(obj);
     }
 
+    public void delete (String id) {
+        findById(id);
+        repo.deleteById(id);
+    }
     public User fromDTO(UserDTO objDto) {
         return new User(objDto.getId(), objDto.getName(), objDto.getEmail());
     }
