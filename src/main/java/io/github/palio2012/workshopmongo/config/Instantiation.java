@@ -17,6 +17,7 @@ import java.util.TimeZone;
 @Configuration
 public class Instantiation implements CommandLineRunner {
 
+    // class dedicated for database and API tests
     @Autowired
     private UserRepository userRepository;
 
